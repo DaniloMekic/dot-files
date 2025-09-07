@@ -17,5 +17,15 @@ git clone git@github.com:DaniloMekic/nvim-config.git
 git submodule update --init
 ```
 
-When `Neovim` receives new commits upstream, its submodule should be updated to the latest commit by running `git submodule update --remote Neovim`.  
-After submodule checks out latest commit, this update needs to be recorded by 1) updating gitlink with `git add Neovim` and 2) committing it with `git commit`.  
+### Updating Neovim Submodule
+When `Neovim` receives new commits upstream, its submodule should be updated to the latest commit by running:
+```
+git submodule update --remote Neovim
+```  
+After submodule checks out latest commit, this update needs to be recorded by
+1. Update gitlink: 
+```
+git add Neovim
+``` 
+2. Commit: 
+```git commit -m <message>```  
