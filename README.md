@@ -28,4 +28,6 @@ After submodule checks out latest commit, this update needs to be recorded by
 git add Neovim
 ``` 
 2. Commit: 
-```git commit -m <message>```  
+```
+git commit -m <message>
+```  
