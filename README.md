@@ -5,29 +5,51 @@ LogiOps: `/etc/logid.cfg`
 mpv: `~/.config/mpv/input.conf`  
 tmux: `~/.tmux.conf`  
 
-# Neovim Submodule
-`Neovim` is tracked as a *submodule* pointing to a repository located at [DaniloMekic/nvim-config](https://github.com/DaniloMekic/nvim-config).  
-Cloning this repo does not populate submodule directories, which is why an additional step is required:
-1. Clone the repo:
+# Git Submodules
+- `Neovim` submodule is pointing to a repository located at [DaniloMekic/nvim-config](https://github.com/DaniloMekic/nvim-config).  
+
+## Cloning the Repository
+In order to clone this repo, submodules need to be initialized and updated:
 ```
-git clone git@github.com:DaniloMekic/nvim-config.git
-```
-2. Check out exact submodule commit that is referenced and initialize directories with `--init`:
-```
-git submodule update --init
+# Reads .gitmodules and copies the configuration into the local .git/config file
+git submodule init
+
+# Fetch and check out the referenced commit
+git submodule update
 ```
 
-### Updating Neovim Submodule
-When `Neovim` receives new commits upstream, its submodule should be updated to the latest commit by running:
+`git submodule init` registers submodules listed in `.gitmodules`, setting up the mapping to the submodule's remote URL.
+`git submodule update` fetches and checks out specific commit that superproject references, downloading it from remote repository.
+
+This can also be achieved in one step:
 ```
-git submodule update --remote Neovim
-```  
-After submodule checks out latest commit, this update needs to be recorded by
-1. Update gitlink: 
+git clone --recurse-submodules <remote-repo.git>
 ```
-git add Neovim
-``` 
-2. Commit: 
+After cloning and updating, check submodule status with:
 ```
-git commit -m <message>
-```  
+git submodule status
+```
+
+## Updating Submodule
+### 1. Stage and commit changes in submodule:
+```
+git add <files>
+git commit -m "<message>"
+```
+
+### 2. Update superproject to reference new commit:
+If local repo is behind remote one, fetch the latest commit:
+```
+git submodule update --remote
+```
+
+Update reference and commit the updated reference in the superproject:
+```
+git add <subproject>
+git commit -m "<message>"
+```
+
+Confirm that the superproject is tracking the correct submodule commit:
+```
+git ls-tree HEAD <subproject>
+```
