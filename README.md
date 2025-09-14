@@ -11,14 +11,17 @@ tmux: `~/.tmux.conf`
 ## Cloning the Repository
 In order to clone this repo, submodules need to be initialized and updated:
 ```
-# Reads .gitmodules and copies the configuration into the local .git/config file
+# Set `.gitmodules` file
+git submodule set-url Neovim git@github.com:DaniloMekic/nvim-config.git
+
+# Read .gitmodules fo;e and copy the configuration into the local .git/config file
 git submodule init
 
 # Fetch and check out the referenced commit
 git submodule update
 ```
 
-`git submodule init` registers submodules listed in `.gitmodules`, setting up the mapping to the submodule's remote URL.
+`git submodule init` registers submodules listed in `.gitmodules`, setting up the mapping to the submodule's remote URL.  
 `git submodule update` fetches and checks out specific commit that superproject references, downloading it from remote repository.
 
 This can also be achieved in one step:
