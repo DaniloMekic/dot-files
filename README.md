@@ -11,10 +11,10 @@ tmux: `~/.tmux.conf`
 ## Cloning the Repository
 In order to clone this repo, submodules need to be initialized and updated:
 ```
-# Set `.gitmodules` file
+# Set .gitmodules file
 git submodule set-url Neovim git@github.com:DaniloMekic/nvim-config.git
 
-# Read .gitmodules fo;e and copy the configuration into the local .git/config file
+# Read .gitmodules file and copy the configuration into the local .git/config file
 git submodule init
 
 # Fetch and check out the referenced commit
