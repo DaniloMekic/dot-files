@@ -11,3 +11,8 @@ PS1='[\u@\h \W]\$ '
 
 # Set vi editing mode
 set -o vi
+
+# Completions
+# https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion.html
+## Git Completions
+source git-completion.bash
