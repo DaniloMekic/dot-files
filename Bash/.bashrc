@@ -16,4 +16,4 @@ set -o vi
 # https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion.html
 ## Git Completions
 ## https://git-scm.com/book/en/v2/Appendix-A:-Git-in-Other-Environments-Git-in-Bash
-source git-completion.bash
+source /usr/share/git/completion/git-completion.bash
