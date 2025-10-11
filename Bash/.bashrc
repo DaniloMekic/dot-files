@@ -12,6 +12,12 @@ PS1='[\u@\h \W]\$ '
 # Set vi editing mode
 set -o vi
 
+# Prompt
+## Git
+source /usr/share/git/completion/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='[\u@\h:\w]$(__git_ps1 " (%s)")\$ '
+
 # Completions
 # https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion.html
 ## Git Completions
