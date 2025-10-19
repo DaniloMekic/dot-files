@@ -6,9 +6,9 @@ colorscheme slate
 
 " TAB spaces to WHITESPACE
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " Indendation
 set smarttab
@@ -29,11 +29,7 @@ set nowrap
 set scrolloff=999
 set termguicolors
 
-" ANSI Escape Codes: Control Sequence Introducer (CSI) Commands
-" Cursor Shapes
-" Insert Mode: Steady Vertical Line
-let &t_SI = "\e[6 q"
-" Replace Mode: Steady Underscode
-let &t_SR = "\e[4 q"
-" Normal Mode: Steady Block
-let &t_EI = "\e[2 q" 
+" Keymaps
+let g:mapleader = " "
+nnoremap <Leader>w :write<CR>
+nnoremap <Leader>q :quit<CR>
