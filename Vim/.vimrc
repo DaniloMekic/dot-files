@@ -29,7 +29,15 @@ set nowrap
 set scrolloff=999
 set termguicolors
 
+function! ToggleQuickFixWindow()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
 " Keymaps
 let g:mapleader = " "
 nnoremap <Leader>w :write<CR>
-nnoremap <Leader>q :quit<CR>
+nnoremap <Leader>q :call ToggleQuickFixWindow()<CR>
