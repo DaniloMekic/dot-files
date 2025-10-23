@@ -1,3 +1,5 @@
+set nocompatible
+
 set number
 set relativenumber
 set showmode
@@ -29,6 +31,11 @@ set nowrap
 set scrolloff=999
 set termguicolors
 
+" CLI Completions
+set wildmenu
+set wildchar=<Tab>
+set wildoptions=""
+
 function! ToggleQuickFixWindow()
     if empty(filter(getwininfo(), 'v:val.quickfix'))
         copen
@@ -41,3 +48,5 @@ endfunction
 let g:mapleader = " "
 nnoremap <Leader>w :write<CR>
 nnoremap <Leader>q :call ToggleQuickFixWindow()<CR>
+nnoremap ]b :bnext<CR>
+nnoremap [b :bprevious<CR>
