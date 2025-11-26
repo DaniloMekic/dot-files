@@ -1,0 +1,4 @@
+# Source .bashrc when Bash is invoked as an interactive login shell
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
