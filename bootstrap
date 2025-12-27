@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+CONFIG=$HOME/.config
+
+# Symlinks
+ln -sfv $PWD/Alacritty/alacritty.toml $CONFIG/Alacritty/
+ln -sfv $PWD/Bash/.bashrc $HOME/
+ln -sfv $PWD/Bash/.bash_profile $HOME/
+ln -sfv $PWD/Hyprland/hyprland.conf $CONFIG/hypr/
+ln -sfv $PWD/mpv/input.conf $CONFIG/mpv/
+ln -sfv $PWD/mpv/mpv.conf $CONFIG/mpv/
+ln -sfv $PWD/Neovim/ $CONFIG/nvim
+ln -sfv $PWD/tmux/.tmux.conf $HOME/
+ln -sfv $PWD/Vim/.vimrc $HOME/
+sudo ln -sfv $PWD/LogiOps/logid.cfg /etc/
+sudo ln -sfv $PWD/keyd/default.conf /etc/keyd/
+
+# System Dependencies
+## Neovim
+bootstrap_nvim() {
+    sudo pacman -S --needed \
+        fzf \
+        gcc \
+        git \
+        go \
+        jdk-openjdk \
+        lua \
+        maven \
+        nodejs \
+        npm \
+        python \
+        python-pip \
+        ripgrep \
+        rust \
+        shellcheck \
+        tree-sitter-cli \
+        unzip \
+        yazi
+    }

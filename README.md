@@ -1,9 +1,8 @@
-# Paths
-Neovim: `~/.config/nvim/`  
-Hyprland: `~/.config/hypr/hyprland.conf`  
-LogiOps: `/etc/logid.cfg`  
-mpv: `~/.config/mpv/input.conf`  
-tmux: `~/.tmux.conf`  
+# Setup
+```shell
+chmod +x bootstrap
+./bootstrap
+```
 
 # Git Submodules
 - `Neovim` submodule is pointing to a repository located at [DaniloMekic/nvim-config](https://github.com/DaniloMekic/nvim-config).  
