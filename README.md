@@ -1,7 +1,7 @@
 # Setup
 ```shell
-chmod +x bootstrap
-./bootstrap
+$ chmod +x bootstrap
+$ ./bootstrap
 ```
 
 # Git Submodules
